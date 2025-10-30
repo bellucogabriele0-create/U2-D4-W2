@@ -1,0 +1,117 @@
+@import './scss/functions'; 
+@import './scss/variables';
+
+$new-primary: rgb(170, 6, 170);
+$new-info: rgb(160, 177, 29);
+$problem: rgb(175, 15, 47);
+$new-danger: #ff0077;
+$light: #f3eeff;
+$epicode-1: #5726c3;
+$epicode-2: #8625a5;
+$epicode-3: #cb2376;
+
+$new-theme-colors: (
+  primary: $new-primary,
+  info: $new-info,
+  problem: $problem,
+  danger :$new-danger,
+  light: $light,
+  epicode-1: $epicode-1,
+  epicode-2: $epicode-2,
+  epicode-3: $epicode-3,
+);
+
+
+$theme-colors: map-merge($theme-colors, $new-theme-colors);
+
+$new-spacers: (
+  6: $spacer * 4,
+);
+
+
+$spacers: map-merge($spacers, $new-spacers);
+
+
+$new-grid-breakpoints: (
+  grossissimo: 1600px,
+  enorme:1700px,
+  gigante:1750px,
+);
+
+
+
+$grid-breakpoints: map-merge($grid-breakpoints, $new-grid-breakpoints);
+
+
+$new-container-max-widths: (
+  "3xl": 1520px,
+  "4xl": 1720px,
+);
+$container-max-widths: map-merge($container-max-widths, $new-container-max-widths);
+
+
+$new-font-sizes: (
+  7: 0.875rem, 
+  8: 0.75rem,
+  9: 0.625rem,
+  10: 0.5rem,
+);
+
+$font-sizes: map-merge($font-sizes, $new-font-sizes);
+
+
+
+$new-border-widths: (
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+);
+$border-widths: map-merge($border-widths, $new-border-widths);
+
+
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 2.5rem;
+
+$grid-gutter-width: 0.5rem;
+
+
+$card-bg: var(--bs-dark);
+$card-color: var(--bs-info);
+$card-border-radius: 2rem;
+
+
+$badge-border-radius: 50rem;
+$btn-border-radius: 50rem;
+$input-border-radius: 50rem;
+
+
+.hero .title {
+  color: map-get($theme-colors, "epicode-1");
+}
+
+.hero p {
+  color: map-get($theme-colors, "epicode-3");
+}
+
+.hero .btn {
+  background-color: map-get($theme-colors, "epicode-2");
+  border-color: map-get($theme-colors, "epicode-2");
+}
+
+
+.btn-outline-epicode-2 {
+  color: map-get($theme-colors, "epicode-2");
+  border-color: map-get($theme-colors, "epicode-2");
+
+  &:hover {
+    background-color: map-get($theme-colors, "epicode-2");
+    color: #fff;
+  }
+}
+
+
+
+
+@import './scss/bootstrap.scss';
